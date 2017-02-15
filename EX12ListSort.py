@@ -40,20 +40,6 @@ def sort_a(numbers):
     # print result list
     print "Sorted Number List :: " + str(numbers)
 
-def sort_b(numbers):
-    for num in numbers:
-        index = 0
-        number_index = 0
-        while index != len(numbers):
-            print numbers[index]
-            if num > numbers[index]:
-                print str(num)+" > "+str(numbers[index])
-                # shift
-                # print(str(num) + "greater than" + str(numbers[index]))
-            index += 1
-        number_index += 1
-    print numbers
-
-sort_b(
-    [5, 4, 3, 2, 6, 12, 13, 15, 16, 17, 18]
+sort_a(
+    [5, 4, 3, 2, 6, 20, 13, 77, 35, 17, 18]
 )
