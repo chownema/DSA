@@ -1,19 +1,17 @@
+# EX12ListSort
 # python 3.4
 # sorting out numbers in a list
 # taking the smallest value in a list and then swapping it with
 # the first value then second  lowest and the second value in the list etc.
 
 def sort_a(numbers):
-    
     # prepare resources
     position_map = {}
     index_position = 0
     largest_number = 0
     smallest_number = numbers[0]
-    
     # print initial list
-    print("Sorting Number List :: " + str(numbers))
-    
+    print "Sorting Number List :: " + str(numbers)
     for num in numbers:
         if largest_number < num:
             largest_number = num
@@ -24,31 +22,38 @@ def sort_a(numbers):
 
         # add number to hashmap in position_map
         position_map[num] = index_position
-        index_position+=1
-    
+        index_position += 1
     # set up vars
     index_position = 1
     numbers[0] = smallest_number
 
     # loop to next lowest value in position_map
     while largest_number != smallest_number:
-        smallest_number+=1
-        print("smallest number " + str(smallest_number))
+        smallest_number += 1
+        print "smallest number " + str(smallest_number)
         # if found swap position in number list
         if smallest_number in position_map.keys():
-            print("found")
+            print "found"
             numbers[index_position] = smallest_number
-            index_position+=1
- 
-    # print result list
-    print("Sorted Number List :: " + str(numbers))
-   
-def sort_b(numbers):
-    index = 0
-    for num in numbers:
-        while index != len(numbers) or num > numbers[index]:
-        print(num)
-        
-    
+            index_position += 1
 
-sort_b([5,4,3,2,6,12,13,15,16,17,18])
+    # print result list
+    print "Sorted Number List :: " + str(numbers)
+
+def sort_b(numbers):
+    for num in numbers:
+        index = 0
+        number_index = 0
+        while index != len(numbers):
+            print numbers[index]
+            if num > numbers[index]:
+                print str(num)+" > "+str(numbers[index])
+                # shift
+                # print(str(num) + "greater than" + str(numbers[index]))
+            index += 1
+        number_index += 1
+    print numbers
+
+sort_b(
+    [5, 4, 3, 2, 6, 12, 13, 15, 16, 17, 18]
+)
