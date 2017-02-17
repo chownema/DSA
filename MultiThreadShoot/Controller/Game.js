@@ -34,14 +34,27 @@ function drawCrossHairs() {
     drawLine(mouse.x, mouse.y, mouse.x, mouse.y+10);
 }
 
+function drawPlayer() {
+    ctx.beginPath();
+    ctx.arc(player.posX, player.posY, 
+        player.size, 0, 2 * Math.PI, false);
+    ctx.fillStyle = '#FFF';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#FFF';
+    ctx.stroke();
+}
+
 
 /**
  * Game loop function
  */
 function gameLoop() {
+    player.processMovement(inputMap);
     window.requestAnimationFrame(gameLoop);
     ctx.clearRect(0, 0, width, height);
     drawCrossHairs();
+    drawPlayer();
 }
 
 // Call functions
