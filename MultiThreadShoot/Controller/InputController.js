@@ -20,25 +20,41 @@ function onMouseup(e) {
 }
 
 function onKeydown(e) {
-
-    if (e.keyCode == '38') {
-        // up arrow
-        console.log("up");
+    switch (e.keyCode) {
+        case 38: // up arrow 
+            console.log("up");
+            break;
+        case 40: // down arrow
+            console.log("down");
+            break;
+        case 37: // left arrow
+            console.log("left");
+            break;
+        case 39: // right arrow
+            console.log("right");
+            break;
+        default:
+            e.preventDefault(); 
+            break;
     }
-    else if (e.keyCode == '40') {
-        // down arrow
-        console.log("down");
-        e.preventDefault();
-    }
-    else if (e.keyCode == '37') {
-       // left arrow
-       console.log("left");
-    }
-    else if (e.keyCode == '39') {
-       // right arrow
-       console.log("right");
-    }
-
+    // Uncomment if controlls are sticky
+    // if (e.keyCode == '38') {
+    //     // up arrow
+    //     console.log("up");
+    // }
+    // else if (e.keyCode == '40') {
+    //     // down arrow
+    //     console.log("down");
+    //     e.preventDefault();
+    // }
+    // else if (e.keyCode == '37') {
+    //    // left arrow
+    //    console.log("left");
+    // }
+    // else if (e.keyCode == '39') {
+    //    // right arrow
+    //    console.log("right");
+    // }
 }
 
 
