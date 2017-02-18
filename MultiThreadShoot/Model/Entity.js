@@ -1,6 +1,8 @@
 /**
- * Constructor for entity
+ * Entity.js
+ * Super Class Model for Entities in the game
  */
+
 function Entity(type, posX, posY, size, name, velX, velY) {
     console.log(name + " Entity initializing...");
     this.type = type;

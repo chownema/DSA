@@ -3,15 +3,15 @@
  * Stores all the variables for the js application
  */
 
+// Display Elements
 var display = document.getElementById('display');
 var ctx = display.getContext('2d');
-var particles = [];
-var enemies = [];
-var player = new Entity("Player", display.width/2, display.height/2, 5, "Jerry", 1, 1);
 var width = display.width = window.innerWidth;
 var height = display.height = window.innerHeight;
 var mouse = { x: width * 0.5, y: height * 0.5};
-gamestate = function() {
+
+// Game State Enum
+var GAMESTATE = function() {
     var currentState = 0;
     var PLAYING = 1;
     var MENU = 2;
@@ -20,8 +20,16 @@ gamestate = function() {
 }
 // Input Controls
 var inputMap = { 
-    38:false,
-    40:false,
-    37:false,
-    39:false,
+    38:false, // up
+    40:false, // down
+    37:false, // left
+    39:false, // right
 }
+// Game Elements
+var particles = [];
+var enemies = [];
+var defaultEntity = new Entity("", 0, 0, 0, "", 0, 0);
+var player = Player(defaultEntity);
+
+// Controllers
+var viewController = new ViewController();
