@@ -31,7 +31,34 @@ function ViewController() {
         ctx.strokeStyle = '#FFF';
         ctx.stroke();
     }
-    
+
+    /**
+     * Draws all particles
+     */
+    this.drawParticles = function(particles) {
+        ctx.strokeStyle = '#FFF';
+        ctx.lineWidth = 2;  
+        for (i = 0; i < particles.length; i++) {
+            if(!particles[i].dead) {
+                //ctx.save();
+                // // translate to the orign of system
+                // ctx.translate(particles[i].posX, particles[i].posY); 	
+                // // rotate
+                // ctx.rotate(particles[i].angle);	
+                // // translate back to actual position
+                // ctx.translate(particles[i].posX, particles[i].posY); 
+                
+                this.drawLine(
+                    player.posX,
+                    player.posY,
+                    particles[i].posX,
+                    particles[i].posY
+                );
+                //ctx.restore();
+            }
+        }
+    }
+
     /**
      * Draws a line from one point to another
      */

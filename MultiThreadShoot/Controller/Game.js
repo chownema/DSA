@@ -15,11 +15,16 @@ function init() {
  * Game loop function
  */
 function gameLoop() {
+    // Process
     player.processMovement(inputMap);
+    processParticles(bullets);
+    // Animate and clear canvas
     window.requestAnimationFrame(gameLoop);
     ctx.clearRect(0, 0, width, height);
+    // Draw
     viewController.drawCrossHairs();
     viewController.drawPlayer();
+    viewController.drawParticles(bullets);
 }
 
 // Call functions

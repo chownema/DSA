@@ -12,6 +12,9 @@ function Entity(type, posX, posY, size, name, velX, velY) {
     this.name = name;
     this.velX = velX;
     this.velY = velY;
+    this.dead = true;
+    this.lifetime = 0;
+    this.angle = 0;
     this.moveEntity = function(x, y) {
         this.posX+=x*this.velX;
         this.posY+=y*this.velY;
@@ -25,6 +28,19 @@ function Entity(type, posX, posY, size, name, velX, velY) {
             this.moveEntity(1, 0);
         if (inputMap[40]) // down
             this.moveEntity(0, 1);
+    }
+    this.fireBullet = function(bullets) {
+        for (i = 0; i < bullets.length; i++)
+        {
+            if(bullets[i].dead) {
+                bullets[i].dead = false;
+                bullets[i].posX = player.posX, 
+                bullets[i].posY = player.posY;
+                bullets[i].angle = getAngle(player.posX, player.posY, 
+                    mouse.x, mouse.y);
+                break;
+            }
+        }
     }
 }
 

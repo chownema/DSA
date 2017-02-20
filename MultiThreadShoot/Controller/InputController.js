@@ -17,11 +17,10 @@ function initControlls() {
  */
 
 function onMousedown(e) {
-    console.log(inputMap);
+    player.fireBullet(bullets);
 }
 
 function onMouseup(e) {
-
 }
 
 function onKeydown(e) {

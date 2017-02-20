@@ -13,6 +13,7 @@ function Player(parent) {
     player.name = "Jerry";
     player.velX = 1;
     player.velY = 1;
+    player.dead = false;
 
     return player;
 }
