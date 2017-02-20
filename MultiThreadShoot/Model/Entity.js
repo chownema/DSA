@@ -33,6 +33,7 @@ function Entity(type, posX, posY, size, name, velX, velY) {
         for (i = 0; i < bullets.length; i++)
         {
             if(bullets[i].dead) {
+                bullets[i].lifeTime = Date.now();
                 bullets[i].dead = false;
                 bullets[i].posX = player.posX, 
                 bullets[i].posY = player.posY;

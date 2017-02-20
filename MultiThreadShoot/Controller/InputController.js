@@ -18,6 +18,7 @@ function initControlls() {
 
 function onMousedown(e) {
     player.fireBullet(bullets);
+    console.log(Date.now());
 }
 
 function onMouseup(e) {

@@ -10,6 +10,8 @@ var width = display.width = window.innerWidth;
 var height = display.height = window.innerHeight;
 var mouse = { x: width * 0.5, y: height * 0.5};
 
+var BULLET_LIFE_TIME = 2000;
+
 // Game State Enum
 var GAMESTATE = function() {
     var currentState = 0;
