@@ -39,6 +39,8 @@ function Entity(type, posX, posY, size, name, velX, velY) {
                 bullets[i].dead = false;
                 bullets[i].posX = player.posX, 
                 bullets[i].posY = player.posY;
+                bullets[i].oldPosX = player.posX, 
+                bullets[i].oldPosY = player.posY;
                 bullets[i].angle = getAngle(player.posX, player.posY, 
                     mouse.x, mouse.y);
                 break;

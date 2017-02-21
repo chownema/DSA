@@ -19,8 +19,11 @@ function processParticles(particles) {
             particles[i].posY = player.posY;
         }
         if(!particles[i].dead) {
-            particles[i].posX += 1 * Math.cos(particles[i].angle);
-            particles[i].posY += 1 * Math.sin(particles[i].angle);
+            particles[i].oldPosX = particles[i].posX;
+            particles[i].oldPosY = particles[i].posY;
+            particles[i].posX += particles[i].velX * Math.cos(particles[i].angle);
+            particles[i].posY += particles[i].velY * Math.sin(particles[i].angle);
+            
         }
     }
 }

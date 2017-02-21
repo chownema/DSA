@@ -41,8 +41,8 @@ function ViewController() {
         for (i = 0; i < particles.length; i++) {
             if(!particles[i].dead) {
                 this.drawLine(
-                    player.posX,
-                    player.posY,
+                    particles[i].oldPosX,
+                    particles[i].oldPosY,
                     particles[i].posX,
                     particles[i].posY
                 );

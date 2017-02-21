@@ -10,7 +10,7 @@ var width = display.width = window.innerWidth;
 var height = display.height = window.innerHeight;
 var mouse = { x: width * 0.5, y: height * 0.5};
 
-var BULLET_LIFE_TIME = 2000;
+var BULLET_LIFE_TIME = 3500;
 
 // Game State Enum
 var GAMESTATE = function() {
@@ -32,7 +32,7 @@ var enemies = [];
 var defaultEntity = new Entity("", 0, 0, 0, "", 0, 0);
 var player = Player(defaultEntity);
 var bullets = CreateParticleSystem("bullets", 0, 
-    0, 2, "bullet", 0.1, 0.1, 20, 3);
+    0, 2, "bullet", 1.5, 1.5, 20, 5);
 
 // Controllers
 var viewController = new ViewController();
