@@ -21,7 +21,10 @@ function Entity(type, posX, posY, size, name, velX, velY) {
         this.posX+=x*this.velX;
         this.posY+=y*this.velY;
     }
-    this.processMovement = function(inputMap) {
+    /**
+     * Processes the movement of the player 
+     */
+    this.processPlayerMovement = function(inputMap) {
         if (inputMap[38]) // up
             this.moveEntity(0, -1);
         if (inputMap[37]) // left
@@ -31,6 +34,10 @@ function Entity(type, posX, posY, size, name, velX, velY) {
         if (inputMap[40]) // down
             this.moveEntity(0, 1);
     }
+    /**
+     * Trigger firebullet to set the positionn of the bullet particle
+     * to the entities position, lifetime and angle aimed at
+     */
     this.fireBullet = function(bullets) {
         for (i = 0; i < bullets.length; i++)
         {

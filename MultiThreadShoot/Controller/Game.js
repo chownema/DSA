@@ -16,7 +16,7 @@ function init() {
  */
 function gameLoop() {
     // Process
-    player.processMovement(inputMap);
+    player.processPlayerMovement(inputMap);
     processParticles(bullets);
     // Animate and clear canvas
     window.requestAnimationFrame(gameLoop);
