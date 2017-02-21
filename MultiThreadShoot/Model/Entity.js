@@ -15,6 +15,8 @@ function Entity(type, posX, posY, size, name, velX, velY) {
     this.dead = true;
     this.lifetime = 0;
     this.angle = 0;
+    this.oldPosX = 0;
+    this.oldPosY = 0;
     this.moveEntity = function(x, y) {
         this.posX+=x*this.velX;
         this.posY+=y*this.velY;

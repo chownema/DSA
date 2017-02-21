@@ -32,7 +32,7 @@ var enemies = [];
 var defaultEntity = new Entity("", 0, 0, 0, "", 0, 0);
 var player = Player(defaultEntity);
 var bullets = CreateParticleSystem("bullets", 0, 
-    0, 2, "bullet", 0.1, 0.1, 1, 3);
+    0, 2, "bullet", 0.1, 0.1, 20, 3);
 
 // Controllers
 var viewController = new ViewController();
